@@ -1,5 +1,6 @@
 BODY {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #eeeeff;
 }
 #txtInput {
     width: 100%;
@@ -39,4 +40,12 @@ BODY {
 }
 .BlobOn {
     background-color: lightgreen;
+}
+
+.VersionMessage {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-top: 12px;
+    border-top: solid 1px #ddd;
+    font-size: small;
 }

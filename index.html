@@ -34,7 +34,23 @@
         <button onclick="javascript:doExample('tracey_chapman')">Tracey Chapman</button>
         <button onclick="javascript:doExample('wham')">Wham</button>
         </div>
-        <script src="passmaker.js"></script>
-        <script src="index.js"></script>
+        <div class="VersionMessage">Last Edit 11:35</div>
+        <script src="passmaker.js" defer></script>
+        <script src="index.js" defer></script>
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("sw.js").then(
+                    (registration) => {
+                        console.log("Service worker registration successful:", registration);
+                    },
+                    (error) => {
+                        console.error(`Service worker registration failed: ${error}`);
+                    },
+                );
+            } else {
+                console.error("Service workers are not supported.");
+            }
+    
+        </script>
     </body>
 </html>
