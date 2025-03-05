@@ -1,50 +1,38 @@
 <!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Cycle Tracker</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="manifest" href="cycletracker.json" />
-    <link rel="icon" href="icons/circle.svg" />
-  </head>
-  <body>
-    <h1>Period Tracker</h1>
-    <form>
-      <fieldset>
-        <legend>Enter your period start and end date</legend>
-        <p>
-          <label for="start-date">Start date</label>
-          <input type="date" id="start-date" required />
-        </p>
-        <p>
-          <label for="end-date">End date</label>
-          <input type="date" id="end-date" required />
-        </p>
-      </fieldset>
-      <p>
-        <button type="submit">Add Period</button>
-      </p>
-    </form>
-    <section id="past-periods">
-    </section>
-    <div class="VersionMessage">Last Edit 11:35</div>
-    <script src="app.js" defer></script>
-
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("sw.js").then(
-                (registration) => {
-                    console.log("Service worker registration successful:", registration);
-                },
-                (error) => {
-                    console.error(`Service worker registration failed: ${error}`);
-                },
-            );
-        } else {
-            console.error("Service workers are not supported.");
-        }
-
-    </script>
-  </body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <title>Hackman Password Maker</title>
+    </head>
+    <body>
+        <h1>Hackman Password Maker</h1>
+        <div class="Blurb">Enter a song lyric that trips off your tongue, and see what password it makes.</div>
+        <textarea id="txtInput">Let it go, let it go, I'm one with the wind and the sky</textarea>
+        <div class="Blurb">gives a password of...</div>
+        <input type="text" id="txtOutput" />
+        <div class="Blurb">
+            <div class="FloatLeft">Character types</div>
+            <div class='Blob' id='Blob1'>&nbsp;</div>
+            <div class='Blob' id='Blob2'>&nbsp;</div>
+            <div class='Blob' id='Blob3'>&nbsp;</div>
+            <div class='Blob' id='Blob4'>&nbsp;</div>
+            <div class="FloatLeft Before6">which is <span class="Bold" id="spnLength"></span> characters long</div>
+        </div>
+        <div class="ClearBoth"></div>
+        <div class="ButtonSet">
+        <button onclick="javascript:encodeBoxes()">Encode</button>
+        <button onclick="javascript:clearBoxes()">Clear</button>
+        <button onclick="javascript:doExample('britney')">Britney</button>
+        <button onclick="javascript:doExample('beatles')">Beatles</button>
+        <button onclick="javascript:doExample('elvis')">Elvis</button>
+        <button onclick="javascript:doExample('frozen')">Frozen</button>
+        <button onclick="javascript:doExample('taylor_swift')">Taylor Swift</button>
+        <button onclick="javascript:doExample('tracey_chapman')">Tracey Chapman</button>
+        <button onclick="javascript:doExample('wham')">Wham</button>
+        </div>
+        <script src="passmaker.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>

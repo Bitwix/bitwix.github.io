@@ -1,12 +1,13 @@
-const VERSION = "v2";
+const VERSION = "v1.0.1";
 const CACHE_NAME = `period-tracker-${VERSION}`;
 
 const APP_STATIC_RESOURCES = [
   "/",
   "/index.html",
-  "/style.css",
-  "/app.js",
-  "/cycletracker.json",
+  "/styles.css",
+  "/index.js",
+  "/passmaker.js",
+  "/hackman.json",
   "/icons/wheel.svg",
 ];
 
